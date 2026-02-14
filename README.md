@@ -16,6 +16,11 @@ A simple, user-friendly graphical interface for [yt-dlp](https://github.com/yt-d
 - **yt-dlp**: Must be installed and accessible from command line
   - Install via pip: `pip install yt-dlp`
   - Or download from: https://github.com/yt-dlp/yt-dlp#installation
+- **Deno** (required by yt-dlp for YouTube downloads):
+  - Windows: `winget install --id=DenoLand.Deno`
+  - macOS: `brew install deno`
+  - Linux: `curl -fsSL https://deno.land/install.sh | sh`
+  - See the [yt-dlp EJS wiki](https://github.com/yt-dlp/yt-dlp/wiki/EJS) for details
 
 No additional Python packages required — uses only standard library (tkinter).
 
