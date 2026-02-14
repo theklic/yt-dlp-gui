@@ -10,27 +10,62 @@ A simple, user-friendly graphical interface for [yt-dlp](https://github.com/yt-d
 - **Progress Tracking**: See download status in real-time
 - **Clean Interface**: Simple, straightforward design focused on usability
 
-## Prerequisites
+## Setup
 
-- **Python 3.8+**
-- **yt-dlp**: Must be installed and accessible from command line
-  - Install via pip: `pip install yt-dlp`
-  - Or download from: https://github.com/yt-dlp/yt-dlp#installation
-- **Deno** (required by yt-dlp for YouTube downloads):
-  - Windows: `winget install --id=DenoLand.Deno`
-  - macOS: `brew install deno`
-  - Linux: `curl -fsSL https://deno.land/install.sh | sh`
-  - See the [yt-dlp EJS wiki](https://github.com/yt-dlp/yt-dlp/wiki/EJS) for details
+Before running the app, you need three things installed: **yt-dlp**, **Deno**, and **ffmpeg**.
 
-No additional Python packages required — uses only standard library (tkinter).
+### 1. Install yt-dlp
 
-## Installation
+The video downloader this GUI wraps.
 
-Clone the repository:
+| Platform | Command |
+|----------|---------|
+| Windows  | `winget install --id=yt-dlp.yt-dlp` |
+| macOS    | `brew install yt-dlp` |
+| Linux    | `pip install yt-dlp` |
+| Any (pip)| `pip install yt-dlp` |
+
+### 2. Install Deno
+
+Required by yt-dlp as a JavaScript runtime for YouTube extraction.
+
+| Platform | Command |
+|----------|---------|
+| Windows  | `winget install --id=DenoLand.Deno` |
+| macOS    | `brew install deno` |
+| Linux    | `curl -fsSL https://deno.land/install.sh \| sh` |
+
+See the [yt-dlp EJS wiki](https://github.com/yt-dlp/yt-dlp/wiki/EJS) for more details.
+
+### 3. Install ffmpeg
+
+Required to merge video and audio into the best quality. Without it, downloads may be limited to lower quality formats.
+
+| Platform | Command |
+|----------|---------|
+| Windows  | `winget install --id=Gyan.FFmpeg` |
+| macOS    | `brew install ffmpeg` |
+| Linux    | `sudo apt install ffmpeg` (Debian/Ubuntu) |
+
+### 4. Verify everything works
+
+After installing, **restart your terminal** and confirm all three are available:
+
+```bash
+yt-dlp --version
+deno --version
+ffmpeg -version
+```
+
+### 5. Clone and run
+
 ```bash
 git clone <repository-url>
 cd yt-dlp-gui
+python main.py
 ```
+
+> **Note**: No additional Python packages are needed — the app uses only the Python standard library (tkinter).
 
 ## Usage
 
